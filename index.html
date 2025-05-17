@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiran Search Engine</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f8f9fa;
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCKaH4JAwHC4Dg3rLPelJ51emYfz4J-bPCBQ&s');
+        }
+        .logo {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #4285F4;
+            text-align: center;
+        }
+        .logo span:nth-child(2) { color: #EA4335; }
+        .logo span:nth-child(3) { color: #FBBC05; }
+        .logo span:nth-child(4) { color: #4285F4; }
+        .logo span:nth-child(5) { color: #34A853; }
+        .logo span:nth-child(6) { color: #EA4335; }
+        
+        .search-box {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            width: 400px;
+            max-width: 90%;
+            border: 1px solid #dfe1e5;
+            border-radius: 24px;
+            padding: 10px;
+            background: #fff;
+            box-shadow: 0px 1px 6px rgba(0,0,0,0.1);
+        }
+        
+        .search-box input {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            padding: 5px;
+        }
+        
+        .buttons {
+            margin-top: 20px;
+        }
+        
+        .buttons button {
+            background-color: #f8f9fa;
+            border: 1px solid #dfe1e5;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .buttons button:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body >
+
+    <div class="logo">
+        <span>K</span><span>I</span><span>R</span><span>A</span><span>N</span><span></span>
+    </div>
+    <div class="search-box">
+        <input type="text" id="search-input" placeholder="Search Google or type a URL">
+    </div>
+    <div class="buttons">
+        <button onclick="searchGoogle()">Google Search</button>
+        <button onclick="redirectTo('https://www.google.com/doodles')">I'm Feeling Lucky</button>
+        <button onclick="redirectTo('https://mail.google.com/')">Gmail</button>
+        <button onclick="redirectTo('https://www.google.com/maps')">Maps</button>
+        <button onclick="redirectTo('https://www.google.com/images')">Images</button>
+    </div>
+    
+    <script>
+        function searchGoogle() {
+            let query = document.getElementById('search-input').value;
+            if (query) {
+                window.location.href = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+            }
+        }
+        
+        function redirectTo(url) {
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>
+
